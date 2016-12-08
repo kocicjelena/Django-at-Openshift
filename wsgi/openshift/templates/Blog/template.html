@@ -1,0 +1,20 @@
+{% extends "Blog/base.html" %}
+{% load staticfiles %}
+
+
+{% block title %}<h1>Details </h1>{% endblock %}
+
+{% block content %}
+
+
+{% for Entry in m_list %}
+<h1><a href="/blog/entry/{{ Entry.entry_id }}">{{ Entry.headline }}</a></h1>
+ <p>post {{ Entry.blog.name }}</p>
+    <p>{{ Entry.headline }}</p>
+	 <p>by {{ Entry.Author.name }}</p>
+    <p>Published {{ Entry.pub_date|date:"F j, Y" }}</p>
+{% endfor %}
+
+<h3>{{ Entry.blog.blog_id}}
+{% if Entry.blog.tagline %}: {{Entry.blog.tagline}}{% else %} {% endif %}</h3>
+{% endblock %}

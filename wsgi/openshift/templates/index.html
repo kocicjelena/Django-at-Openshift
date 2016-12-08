@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% extends "Blog/base.html" %}
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+<title>{% block title %}My amazing library{% endblock %}</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+<div id="sidebar">
+{% block sidebar %}
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/posts/">posts</a></li>
+<li><a href="/contact/">contact</a></li>
+<li><a href="/i/">i</a></li>
+<li><a href="/blog/blog/entries/">entries</a></li>
+<li><a href="/blog/foo/">foo</a></li>
+<li><a href="/blog/blogs_of_author/">blogs of author</a></li>
+<li><a href="/blog/search/">search</a></li>
+</ul>
+{% endblock %}
+</div>
+<div id="content">
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>

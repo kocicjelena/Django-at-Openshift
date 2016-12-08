@@ -1,0 +1,24 @@
+{% extends "Blog/base.html" %}
+{% load staticfiles %}
+
+
+{% block title %}<h1>POSTS </h1>{% endblock %}
+
+{% block content %}
+
+
+{% for Entry in blog_list %}
+<h1><a href="/{{ Entry.entry_id }}">{{ Entry.headline }}</a></h1>
+<h2>post: {{ Entry.blog.name }}</h2>
+ <p>          </p>
+    <p>{{ Entry.headline }}</p>
+	  <p>{{ Entry.body_text }}</p>
+	   
+	 <p> {{ Entry.author.name }}</p>
+    <p>Published: {{ Entry.pub_date|date:"F j, Y" }}</p>
+
+
+<h3>{{ Entry.blog.blog_id}}
+{% if Entry.blog.title %}: {{Entry.blog.title}}{% else %} {% endif %}</h3>
+{% endfor %}
+{% endblock %}

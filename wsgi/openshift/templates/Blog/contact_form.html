@@ -1,0 +1,23 @@
+{% extends "Blog/base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+
+    <h1>Contact us</h1>
+
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}{% endblock %}
+
+   {% block content %} <form action="/blog/contact/" method="post">
+        <p>Subject: <input type="text" name="subject"></p>{% endblock %}
+		{% block sidebar %}
+        <p><label>Your e-mail (optional): </label></p><input type="text" name="email">
+		<p><label>Message:</label></p>
+		<textarea name="message" rows="10" cols="50"></textarea>
+        <input type="submit" value="Submit">
+    </form>{% endblock %}

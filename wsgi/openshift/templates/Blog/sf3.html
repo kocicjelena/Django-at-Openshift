@@ -1,0 +1,20 @@
+{% extends "Blog/base.html" %}
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+{% block title %}<p>You searched for: <strong>{{ query }}</strong></p>{% endblock %}
+{% block content %}
+
+        {% for author in books %}
+		{% if author.name = query %}
+		   details: <p>{{ author.name }}</p>
+                   <p>{{ author.email }}</p>
+        
+        
+    
+{% else %}
+   <p>No authors matched your search criteria.</p>
+  
+{% endif %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,33 @@
+<html>
+{% extends "Blog/base.html" %}
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    {% block content %}
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+	
+    <form action="/blog/searchblog/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+	
+
+    
+    
+        {% for blog in books %}
+		{% if blog = query %}
+        <p>No blogs matched your search criteria.</p>
+        
+    
+{% else %}
+     <li>{{ blog.name }}</li>
+	 <p>No posts matched your search criteria.</p>
+{% endif %}
+{% endfor %}
+{% endblock %}

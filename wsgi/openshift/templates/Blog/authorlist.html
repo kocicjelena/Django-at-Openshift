@@ -1,0 +1,18 @@
+{% extends "Blog/base.html" %}
+{% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+{% block title %}
+<h1>Authors </h1>
+{% endblock %}
+<nav> 
+{% block content %}
+
+{% for Author in obj_list %}
+{{ Author.pub_date|date:"F j, Y" }}
+<p>{{ Author.name }}</p>
+  <p>email: {{ Author.email }}</p>
+{% endfor %} 
+{% endblock %}
+</nav>
