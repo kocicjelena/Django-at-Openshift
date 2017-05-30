@@ -8,6 +8,6 @@ setup(
     description='OpenShift App',
     author='J',
     author_email='kocicjelena@gmail.com',
-    url='http://www.python.org/sigs/distutils-sig/',
+    url='https://github.com/kocicjelena/Django-at-Openshift',
     install_requires=['Django<=1.4'],
 )
